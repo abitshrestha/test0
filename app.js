@@ -24,7 +24,7 @@ app.use(express.json());
 app.use('/images',express.static(path.join(__dirname,'uploads')));
 app.use('/',authRouter);
 app.use('/',uploadRouter)
-app.use('/check',(req,res)=>{
+app.get('/check',(req,res)=>{
     res.send('hello');
 })
 
