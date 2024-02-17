@@ -14,7 +14,11 @@ const __dirname = path.dirname(__filename);
 
 connectDB();
 
-app.use(cors());
+app.use(cors({
+    origin:['https://test0-phi.vercel.app'],
+    methods:['POST','GET'],
+    credentials:true,
+}));
 app.use(express.json());
 
 app.use('/images',express.static(path.join(__dirname,'uploads')));
